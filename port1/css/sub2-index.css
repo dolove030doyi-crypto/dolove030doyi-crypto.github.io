@@ -1,0 +1,344 @@
+@charset "UTF-8";
+
+.menu > ul > li > ul.submenu {
+    position: absolute; text-align: center;
+    top: 39px;          
+    left: -5%;
+    width: 110%;
+    border-radius: 0 0 10px 10px;
+    background: #6B4E3D;
+    display: none;     
+    z-index: 1000;
+}
+.menu > ul > li > ul.submenu li a {
+    color: #EDE2D6;
+    display: block;
+    padding: 10px 14px;
+    font-size: 17px;
+}
+header ul.menu-phone{display: none; position: absolute; right:20px; top:20px;}
+section.banner {
+    background-color: #6B4E3D;
+    height: 100vh;
+    padding-top: 50px;
+    overflow: hidden;
+}
+section.mo-banner{display: none;}
+/* section.banner .container{ display: flex;} */
+
+section.banner .banner_img{
+    display: inline-block;
+    vertical-align: middle; 
+    font-size: 16px;
+}
+section.banner .banner_img img:nth-child(1){
+    /* border: 1px solid red; */
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    right: 0;
+    height: 100vh;
+}              
+section.banner .banner_txt{
+    display: inline-block;
+    vertical-align: middle; 
+    font-size: 16px;
+    margin-left: 100px;
+}
+
+section.banner .banner_txt h2{
+    position: relative;
+    z-index: 1;
+    background: none;
+    padding: 80px;
+    font-size: 70px;
+    color: #EDE2D6;
+    line-height: 90px;
+    margin-bottom: 100px;
+}
+
+section.banner .banner_txt h2::before{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    content:"";
+    width: 100vw;
+    background:#8A9A5B;
+    border-radius: 40px;
+    z-index:-1;
+}
+
+section.banner .banner_txt p{
+    font-size: 25px;
+    margin-top: 10px;
+    padding-left: 80px;
+    color: #EDE2D6;
+    line-height: 160%;
+} 
+
+
+section.pet{background-color: #EDE2D6; padding: 200px 0;}
+section.pet h2{
+    margin-bottom: 50px;
+    font-size: 60px;
+    color: #6B4E3D;
+    text-align: center;
+}
+
+section.pet .location{
+    align-items:center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 610px;
+    margin: auto;
+}
+section.pet .location i{
+    color: #6B4E3D;
+    font-size: 25px;
+}
+section.pet .location p i{margin-right: 10px;} 
+
+
+section.pet .icon{
+    align-items:center;
+    justify-content: space-between;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+section.pet .icon ul li {display: inline-block; padding: 0 20px;}
+
+section.pet .cardlist {gap: 20px;}
+section.pet .cardlist .card{
+    width: calc((100% - 40px) / 3);
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+section.pet .cardlist .card .txt {padding: 20px;}
+
+.line{width: 100%;height: 1px; background-color: #6B4E3D;margin: 20px 0;}
+
+
+
+section.pet .page {
+    align-items:center;
+    justify-content: space-between;
+    
+}
+section.pet .page ul li{display: inline-block; padding: 0 20px; text-align: center;}
+section.pet .page ul li a{background-color:  #F3EFEA; padding: 20px; }
+
+
+
+
+
+
+@media(max-width:992px){
+    /* pc에서 보이던 헤더는 감춘다  */
+    header .menu .big_menu {display: none; } 
+    .mo-menubar{background-color: #000; width: 1000px;}
+    .mo-menu{display: block; right: -100%; }
+    .mo-menu.show{right: 0; transition: all 0.3s;}
+    /* 모바일용 메뉴===  */
+
+    section.banner{padding-top: 0;}
+
+    .mo-header{
+                opacity: 0;  
+            }
+
+    .mo-headebar{
+        background-color: #6B4E3D;
+        display: block;
+        position: fixed;
+        left:0;
+        top:0; 
+        width: 100%; height: 50px;  transition: 0.3s; opacity: 1; 
+        z-index: 4000;
+        cursor: pointer;
+    }
+
+/* 햄버거 버튼 구역 ===================================      */
+    #bt{display: block;    position: fixed; right: 30px; top:18px; 
+                width: 30px; height: 30px;
+                z-index: 5000;
+                cursor: pointer; 
+                
+                }  /* 나중에 보더는 변경하도록 */
+
+    #bt span{position: absolute;  
+            width: inherit; /* 부모 값 대로 상속해라 100%해도됨. */
+            height: 4px; left:0px; top:20%;
+            background-color: #EDE2D6;
+            transform: translate(0, -50%); 
+            display: inline-block; 
+            transition: 0.3s;
+            border-radius: 5px;
+            }
+
+    #bt span:before, #bt span:after{ 
+        content: '';
+        position: absolute; width: inherit; /* 부모 값 대로 상속해라 100px해도됨. */
+        height: inherit; /* 10px */
+        background-color: #EDE2D6;   transition: 0.3s;
+        border-radius: 5px;
+        }
+    #bt span:before{ /* 이것의 부모는 #bt span 주의 */
+        top:-10px; 
+    }
+    #bt span:after{ /* 이것의 부모는 #bt span 주의 */
+        top:10px;   }
+
+    /* 클릭시 보여질 active클래스  */
+    #bt.active span{
+        background-color: transparent; }
+
+    #bt.active span:before{
+        top:0px; /* -20값을 그래로 가져가면 위치가 바뀌므로 0으로 수정 */
+        transform: rotate(45deg);
+    }
+    #bt.active span:after{
+        top:0px; /* 20값을 그래로 가져가면 위치가 바뀌므로 0으로 수정 */
+        transform: rotate(-45deg);
+    }
+
+/* 햄버거 버튼 구역 끝 ===================================      */
+        
+        /* header .menu {transition: all 0.3s;} */
+
+        .mo-menu  {
+            position: fixed;
+            z-index: 2000;
+            width: 100%;
+            background-color: #6B4E3D;
+            height: 100vh;
+            transition: all 0.3s;
+            padding-top: 50px;
+        }
+        .mo-menu>ul{padding: 0 40px;}
+        .mo-menu > ul > li{
+            border-bottom: 1px solid #EDE2D6; 
+            padding-left: 20px;
+            
+        }
+        .mo-menu  > ul > li > a{   
+            color: #EDE2D6;
+            font-size: 30px;
+            padding: 30px 0;
+            display: inline-block;
+        }
+        
+        .mo-menu .mo-submenu{
+            display: none;
+            padding-left: 40px;
+            
+        }
+        
+
+        .mo-menu  .mo-submenu>li> a{
+            font-size: 26px;
+            padding: 20px 0;
+            color:#EDE2D6;
+            display: inline-block;
+            
+        }
+
+
+
+
+        
+        
+
+
+/* 본문 ===========================================  */
+
+    section.banner{display: none;}
+    
+    section.mo-banner{
+        display: block;
+        background-color: #6B4E3D;
+        height: 100vh;
+
+    }
+    section.mo-banner div.container{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+    
+    section.mo-banner span{
+        position: absolute;
+        top: 130px;
+        right: 0;
+        width: 35%;
+        background: #8A9A5B;
+        border-radius: 30px 0 0 30px;
+        z-index: 0;
+        padding: 200px 0;
+    }
+    section.mo-banner .mo-banner_img img{ margin-top: auto; margin-bottom: 0; width: 60%;}
+    section.mo-banner .mo-banner_txt{
+        position: absolute;
+        text-shadow: 0 0 10px rgba(0,0,0,0.4);
+        color: #EDE2D6;
+        left: 30px;
+        bottom: 50px;
+        z-index: 10;
+    }
+    section.mo-banner .mo-banner_txt h2{font-size: 80px; line-height: 120%; }
+    section.mo-banner .mo-banner_txt p{ font-size: 25px; margin-top: 10px;} 
+
+
+
+
+    
+
+}
+
+@media(max-width:767px){
+    .mo-menu  > ul > li > a{   
+        color: #EDE2D6;
+        font-size: 24px;
+        padding: 30px 0;
+        display: inline-block;
+    }
+
+
+    .mo-menu  .mo-submenu>li> a{
+        font-size: 20px;
+        padding: 20px 0;
+        color:#EDE2D6;
+        display: inline-block;
+        }
+
+    section.mo-banner span{
+        top: 100px;
+        padding: 150px 0;
+        width: 25%;
+    }
+
+    section.mo-banner .mo-banner_img img{
+        /* height: 50vh; */
+        width: 70%;
+    }
+
+    section.mo-banner .mo-banner_txt{
+        bottom: 60px;
+
+    }
+    section.mo-banner .mo-banner_txt h2{
+        font-size: 70px;
+        line-height: 100%;
+        padding-bottom: 30px;
+    }
+
+    section.mo-banner .mo-banner_txt p{ font-size: 20px; margin-top: 10px;} 
+
+
+
+
+    }

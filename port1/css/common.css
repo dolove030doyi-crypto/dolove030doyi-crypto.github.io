@@ -1,0 +1,306 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    /* border: 1px solid red; */
+}
+body{
+    font-family: 'Pretendard';
+}
+img{display: block; width: 100%;}
+.flex-box{display: flex; flex-wrap: wrap;}
+.container{max-width: 1400px; margin: auto; }
+header{
+    background-color: #6B4E3D;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    padding: 10px 0;
+}
+header .logo{width: 100%;}
+header .logo img{width: 80px;}
+ header nav.flex-box{ flex-wrap: nowrap; align-items: center; } 
+ header nav.flex-box .menu{ width: 100%;} 
+/* nav{padding: 0px 0 ;} */
+/* .menu { margin-left: auto;  } */
+.mo-menu{display: none; transition: all 0.3s;}
+.menu > ul { 
+    display: flex;
+    justify-content: flex-end;   
+    padding: 10px 0px;   
+    background-color: #6B4E3D;
+}
+
+.menu > ul > li {
+    position: relative;
+    font-size: 20px;
+    padding:0 50px;
+}
+.menu > ul > li > a { color: #fff; }
+
+.menu > ul > li > ul.submenu {
+    position: absolute; text-align: center;
+    top: 39px;          
+    left: -5%;
+    width: 110%;
+    border-radius: 0 0 10px 10px;
+    background: #6B4E3D;
+    display: none;     
+    z-index: 1000;
+}
+.menu > ul > li > ul.submenu li a {
+    color: #EDE2D6;
+    display: block;
+    padding: 10px 14px;
+    font-size: 17px;
+}
+header ul.menu-phone{display: none; position: absolute; right:20px; top:20px;}
+
+
+
+
+footer{background-color: #6B4E3D;  padding: 40px 0;}
+footer .footer-bar div.flex-box ul {width: 33.33%; }
+footer .footer-bar div.flex-box ul li{
+    font-size: 20px;
+    color: #EDE2D6;
+    font-weight: 300;
+    line-height: 200%;
+}
+footer .footer-bar a{color: #EDE2D6;}
+footer .footer-bar h2{text-align: right;}
+footer .footer-bar h2 a{
+    display: inline-block;
+    width: 100%;
+    
+    font-size: 25px;
+    color: #8A9A5B;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+
+footer .mo-footer-bar{display: none;}
+
+.popup{
+    width: 70px;
+    position: fixed;
+    z-index: 10;
+    right: 40px;
+    bottom: 100px;
+}
+.popup:hover{cursor: pointer;}
+
+@media(max-width:1030px){
+    header .logo{margin-left: 30px;}
+    header .logo img{width: 50px;}
+}
+@media(max-width:992px){
+
+     header .menu .big_menu {display: none; } 
+    .mo-menubar{background-color: #000; width: 1000px;}
+    .mo-menu{display: block; right: -100%; }
+    .mo-menu.show{right: 0; transition: all 0.3s;}
+    /* 모바일용 메뉴===  */
+
+
+
+    .mo-header{
+                opacity: 0;  
+            }
+
+    .mo-headebar{
+        background-color: #6B4E3D;
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        transition: 0.3s;
+        opacity: 1;
+        z-index: 4000;
+    }
+
+/* 햄버거 버튼 구역 ===================================      */
+    #bt{display: block;    position: fixed; right: 30px; top:18px; 
+                width: 30px; height: 30px;
+                z-index: 5000;
+                cursor: pointer; 
+                
+                }  /* 나중에 보더는 변경하도록 */
+
+    #bt span{position: absolute;  
+            width: inherit; /* 부모 값 대로 상속해라 100%해도됨. */
+            height: 4px; left:0px; top:20%;
+            background-color: #EDE2D6;
+            transform: translate(0, -50%); 
+            display: inline-block; 
+            transition: 0.3s;
+            border-radius: 5px;
+            }
+
+    #bt span:before, #bt span:after{ 
+        content: '';
+        position: absolute; width: inherit; /* 부모 값 대로 상속해라 100px해도됨. */
+        height: inherit; /* 10px */
+        background-color: #EDE2D6;   transition: 0.3s;
+        border-radius: 5px;
+        }
+    #bt span:before{ /* 이것의 부모는 #bt span 주의 */
+        top:-10px; 
+    }
+    #bt span:after{ /* 이것의 부모는 #bt span 주의 */
+        top:10px;   }
+
+    /* 클릭시 보여질 active클래스  */
+    #bt.active span{
+        background-color: transparent; }
+
+    #bt.active span:before{
+        top:0px; /* -20값을 그래로 가져가면 위치가 바뀌므로 0으로 수정 */
+        transform: rotate(45deg);
+    }
+    #bt.active span:after{
+        top:0px; /* 20값을 그래로 가져가면 위치가 바뀌므로 0으로 수정 */
+        transform: rotate(-45deg);
+    }
+
+/* 햄버거 버튼 구역 끝 ===================================      */
+        
+
+.mo-menu  {
+            position: fixed;
+            z-index: 2000;
+            width: 100%;
+            background-color: #6B4E3D;
+            height: 100vh;
+            transition: all 0.3s;
+            padding-top: 50px;
+        }
+        .mo-menu>ul{padding: 0 40px;}
+        .mo-menu > ul > li{
+            border-bottom: 1px solid #EDE2D6; 
+            padding-left: 20px;
+            
+        }
+        .mo-menu  > ul > li > a{   
+            color: #EDE2D6;
+            font-size: 30px;
+            padding: 30px 0;
+            display: inline-block;
+        }
+        
+        .mo-menu .mo-submenu{
+            display: none;
+            padding-left: 40px;
+            
+        }
+        
+
+        .mo-menu  .mo-submenu>li> a{
+            font-size: 26px;
+            padding: 20px 0;
+            color:#EDE2D6;
+            display: inline-block;
+            
+        }
+
+
+
+
+
+footer .footer-bar{display: none;}
+footer .mo-footer-bar{display: block; padding: 0 20px;}
+
+footer .mo-footer-bar ul {
+    margin-bottom: 20px;
+    border-bottom: solid 1px #EDE2D6;
+    
+}
+footer .mo-footer-bar ul:nth-child(3){border-bottom: none;}
+footer .mo-footer-bar ul li:nth-child(2){
+    margin-bottom: 20px;
+}
+footer .mo-footer-bar ul li{
+    font-size:20px;
+    color: #EDE2D6;
+    font-weight: 300;
+    line-height: 180%;
+    
+}
+footer .mo-footer-bar a{color: #EDE2D6;}
+footer .mo-footer-bar h2 a{
+    display: inline-block;
+    width: 100%;
+    
+    font-size: 25px;
+    color: #8A9A5B;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.popup{
+    width: 50px;
+    position: fixed;
+    z-index: 10;
+    right: 40px;
+    bottom: 40px;
+}
+
+}
+
+@media(max-width:767px){
+
+
+
+
+    .mo-menu  > ul > li > a{   
+        color: #EDE2D6;
+        font-size: 24px;
+        padding: 30px 0;
+        display: inline-block;
+    }
+
+
+    .mo-menu  .mo-submenu>li> a{
+        font-size: 20px;
+        padding: 20px 0;
+        color:#EDE2D6;
+        display: inline-block;
+        }
+
+
+    footer .mo-footer-bar ul {
+    margin-bottom: 20px;
+    border-bottom: solid 1px #EDE2D6;
+    
+}
+footer .mo-footer-bar ul:nth-child(3){border-bottom: none;}
+footer .mo-footer-bar ul li:nth-child(2){
+    margin-bottom: 20px;
+}
+footer .mo-footer-bar ul li{
+    font-size:16px;
+    line-height: 160%;
+    
+}
+footer .mo-footer-bar a{color: #EDE2D6;}
+ footer .mo-footer-bar h2{
+    font-size: 20px;
+}
+
+.popup{
+    width: 40px;
+    position: fixed;
+    z-index: 10;
+    right: 30px;
+    bottom: 30px;
+}
+
+}

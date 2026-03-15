@@ -1,0 +1,386 @@
+@charset "UTF-8";
+
+
+section.banner {
+    background-color: #6B4E3D;
+    height: 100vh;
+    padding-top: 50px;
+    overflow: hidden;
+}
+section.mo-banner{display: none;}
+
+section.banner .banner_img{
+    display: inline-block;
+    vertical-align: middle; 
+    font-size: 16px;
+}
+section.banner .banner_img img{
+    /* border: 1px solid red; */
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    right: 0;
+    height: 100vh;
+}              
+section.banner .banner_txt{
+    display: inline-block;
+    vertical-align: middle; 
+    font-size: 16px;
+    margin-left: 100px;
+}
+
+section.banner .banner_txt h2{
+    position: relative;
+    z-index: 1;
+    background: none;
+    padding: 80px;
+    font-size: 70px;
+    color: #EDE2D6;
+    line-height: 90px;
+    margin-bottom: 100px;
+}
+
+section.banner .banner_txt h2::before{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    content:"";
+    width: 100vw;
+    background:#8A9A5B;
+    border-radius: 40px;
+    z-index:-1;
+}
+
+section.banner .banner_txt p{
+    font-size: 25px;
+    margin-top: 10px;
+    padding-left: 80px;
+    color: #EDE2D6;
+    line-height: 160%;
+} 
+
+
+section.pet{background-color: #EDE2D6; padding: 200px 20px;}
+section.pet h2{
+    margin-bottom: 50px;
+    font-size: 60px;
+    color: #6B4E3D;
+    text-align: center;
+}
+
+section.pet .location{
+    align-items:center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 610px;
+    margin: auto;
+}
+section.pet .location i{
+    color: #6B4E3D;
+    font-size: 25px;
+}
+section.pet .location p i{margin-right: 10px;} 
+
+
+
+section.pet .icon{
+    align-items:center;
+    justify-content: space-between;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    color: #545454;
+    margin-right: 20px;
+}
+section.pet .icon .fa-border-all, 
+section.pet .icon .sort-left span,  
+section.pet .icon .fa-chevron-down  {color: #000; }
+
+section.pet .icon .sort-left .fa-list{color: #545454;}
+
+section.pet .icon .sort-left .fa-border-all,
+section.pet .icon .sort-left span{
+  margin-left: 15px;
+}
+
+
+section.pet .icon ul li {display: inline-block; padding: 0 20px;}
+section.pet .icon .sort-right .blod {color: #000;}
+
+section.pet .cardlist {gap: 20px;}
+section.pet .cardlist .card{
+    width: calc((100% - 40px) / 3);
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+section.pet .cardlist .card .txt {padding: 20px; font-size: 19px; color: #3B2F2F;}
+section.pet .cardlist .card .txt .title{font-weight: bold; }
+section.pet .cardlist .card .txt .mate-content{white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+
+section.pet .cardlist .card .txt .info{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+section.pet .cardlist .card .txt .info .name{font-weight: 500;} 
+section.pet .cardlist .card .txt .info .right{ 
+    align-items: center;                   
+    color: #6B4E3D;
+}
+section.pet .cardlist .card .txt .point{color: #A39F9F;}
+
+.heart{color: #f43e63;}
+.fa-heart{cursor: pointer; margin-left: 5px;}
+
+
+
+.line{width: 100%;height: 1px; background-color: #6B4E3D;margin: 20px 0;}
+
+
+
+
+
+section.pet .page {
+ margin-top: 50px;
+
+}
+section.pet .page ul{  text-align: center }
+section.pet .page ul li{
+    display: inline-block;
+    padding: 0 10px; 
+    
+}
+section.pet .page ul li a{
+    background-color: #F3EFEA;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #6B4E3D;
+    font-weight: 600;
+}
+section.pet .page ul li a.active{background-color:  #6B4E3D; color: #F3EFEA;}
+section.pet .page ul li a:hover {background-color:  #6B4E3D; color: #F3EFEA;}
+
+section.mo-pet {display: none;}
+
+
+@media(max-width:1200px){
+    section.pet .cardlist .card .txt{
+        font-size: 16px;
+    }
+}
+
+@media(max-width:992px){
+    /* pc에서 보이던 헤더는 감춘다  */
+   
+section.pet { 
+    display: none;
+}        
+  
+section.mo-pet {display: block;}
+
+        
+        
+
+
+/* 본문 ===========================================  */
+
+    section.banner{display: none;}
+    
+    section.mo-banner{
+        display: block;
+        background-color: #6B4E3D;
+        height: 100vh;
+
+    }
+    section.mo-banner div.container{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+    
+    section.mo-banner span{
+        position: absolute;
+        top: 130px;
+        right: 0;
+        width: 35%;
+        background: #8A9A5B;
+        border-radius: 30px 0 0 30px;
+        z-index: 0;
+        padding: 200px 0;
+    }
+    section.mo-banner .mo-banner_img img{ margin-top: auto; margin-bottom: 0; width: 60%;}
+    section.mo-banner .mo-banner_txt{
+        position: absolute;
+        text-shadow: 0 0 10px rgba(0,0,0,0.4);
+        color: #EDE2D6;
+        left: 30px;
+        bottom: 50px;
+        z-index: 10;
+    }
+    section.mo-banner .mo-banner_txt h2{font-size: 80px; line-height: 120%; }
+    section.mo-banner .mo-banner_txt p{ font-size: 25px; margin-top: 10px;} 
+
+
+
+
+    section.mo-pet{
+        display: block;
+        background-color: #EDE2D6;
+        padding: 50px 20px;
+    }
+
+    section.mo-pet h2{
+        padding-bottom: 30px;
+        color: #6B4E3D;
+        font-size: 35px;
+        text-align: center;
+    }
+
+    section.mo-pet .mo-location {
+        align-items:center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 50px;
+        font-size: 25px;
+    }
+
+    section.mo-pet .mo-location i{color: #6B4E3D;
+}
+    
+    section.mo-pet .mo-icon{
+    margin-bottom: 0px;
+    color: #545454;
+}
+section.mo-pet .mo-icon ul{
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+section.mo-pet .mo-icon ul li{
+    display: inline-block;
+    font-size: 25px;
+    margin: 0 40px;
+}
+section.mo-pet .mo-icon ul li.mo-blod{font-weight: 600;}
+
+section.mo-pet .mo-sort-bottom{
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    margin: 30px 0;margin-bottom: 0;
+    font-size: 20px;
+}
+
+.mo-line{width: 100%;height: 1px; background-color: #6B4E3D; margin: 20px 0;}
+
+section.mo-pet .mo-sort-bottom span{margin-right: 5px;}
+section.mo-pet .mo-card{background-color: #fff; margin: 30px 0;margin-top:30px; border-radius: 10px; overflow: hidden;}
+section.mo-pet .mo-card .mo-txt {
+    color: #3B2F2F;
+    padding: 20px;
+    font-size: 25px;
+}
+
+section.mo-pet .mo-card .mo-txt .mo-title {font-weight: bold; }
+section.mo-pet .mo-card .mo-txt .mo-mate-content{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+section.mo-pet .mo-card .mo-txt .mo-info{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    
+}
+section.mo-pet .mo-card .mo-txt .mo-info .mo-right{color: #6B4E3D;}
+section.mo-pet .mo-card .mo-txt .mo-point{color: #A39F9F;}
+section.mo-pet a{
+    display: inline-block;
+    text-align: right;
+    width: 100%;
+    margin-top: 30px;
+    font-weight: 700;
+    color: #8A9A5B;
+    font-size: 24px;
+}
+
+
+
+}
+
+
+
+
+@media(max-width:767px){
+    
+
+    section.mo-banner span{
+        top: 100px;
+        padding: 150px 0;
+        width: 25%;
+    }
+
+    section.mo-banner .mo-banner_img img{
+        /* height: 50vh; */
+        width: 70%;
+    }
+
+    section.mo-banner .mo-banner_txt{
+        bottom: 60px;
+
+    }
+    section.mo-banner .mo-banner_txt h2{
+        font-size: 70px;
+        line-height: 100%;
+        padding-bottom: 30px;
+    }
+
+    section.mo-banner .mo-banner_txt p{ font-size: 20px; margin-top: 10px;} 
+
+    section.mo-pet h2{font-size: 30px;}
+
+    section.mo-pet .mo-location{
+        font-size: 20px;
+        padding: 13px;
+    }
+    section.mo-pet .mo-icon ul li{
+        font-size: 20px;
+        margin: 0 8px;
+    }
+    section.mo-pet .mo-sort-bottom{
+        font-size: 16px;
+    }
+    section.mo-pet .mo-card .mo-txt{
+        font-size: 18px;
+    }
+
+
+section.mo-pet a{
+    font-size: 18px;
+    margin-top: 0;
+}
+
+
+
+
+
+    
+
+
+
+    }
