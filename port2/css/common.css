@@ -1,0 +1,335 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Asta Sans", sans-serif;
+    /* border: 1px solid red; */
+}
+img{display: block; width: 100%;}
+a{color: #fff;}
+.flex-box{display: flex; flex-wrap: wrap;}
+.container{max-width: 1400px; margin: auto; padding: 0 20px;}
+.button-purple{
+    border-radius: 50px;
+    background-color: #6F4BFF;
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    color: #F3FBFF;
+    width: 100%;
+    
+}
+.button-red{
+    border-radius: 50px;
+    background-color: #FF433E;
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    color: #F3FBFF;
+    width: 100%;
+}
+
+
+
+h2.title1{font-size: 60px; color: #141C34;}
+.bluimg{background: rgba(0,0,0,0.4);}
+.p1{font-size: 32px;}
+.p2{font-size: 28px;} 
+
+
+header{
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    color: #F6F8FC;
+    padding: 10px 0;
+    transition: all 0.3s;
+    cursor: pointer;
+    border-bottom: 1px solid #fff;
+}
+
+/* header nav{} */
+header .logo {width: 10%;}
+header .logo img {width: 45px;}
+ header nav.flex-box{ flex-wrap: nowrap; align-items: center; } 
+
+   header ul.menu {text-align: center; width: 80%; }
+    header ul.menu>li{width: 25%;}
+    header ul.menu>li a{font-size: 20px;}
+
+    div.login{width: 10%; text-align: right; font-size: 20px; align-items: center;}
+    div.login:hover{color: #A993FF;}
+
+/* 서브 메뉴구역 */    
+
+.sub{  width: 100%; padding:10px 0px; 
+       position: fixed; top: 66px;	
+       left: 0%;
+       z-index: 100;
+       background-color: #141C34;
+       display: none; 
+        /* 처음에 보이고 있으면 안되니까~ */ }
+      
+ div.sub .sub_box>ul:nth-child(1){width: 10%;}     
+ div.sub .blank{width: 10%;}     
+ div.sub .sub_menu_box{width: 80%;}     
+ div.sub .sub_box ul.submenu{  width: 25%; vertical-align: top; text-align: center;}
+ div.sub .sub_box ul.submenu li{ font-weight:300; line-height: 170%; font-size: 18px;}
+ 
+ div.sub .sub_box ul.submenu a:hover{ color: #A993FF;  }
+
+.headerbar{background-color: #141C34; transition: all 0.4s;}
+ 
+.mo_menu{display: none; transition: all 0.3s;}
+
+
+/* footer ========================================================== */
+footer.footer_bar{background-color: #141C34; padding: 40px 0;}
+footer.footer_bar .flex-box li span{display: none;}
+
+footer.footer_bar .flex-box{               
+    border-bottom: 1px solid #fff;    
+    justify-content:space-between;
+   
+}
+footer.footer_bar .flex-box ul{
+    padding-bottom: 20px;
+
+}
+
+footer.footer_bar .flex-box ul li:nth-child(1){
+    font-size: 20px;
+    color: #F6F8FC;
+    font-weight: bold;
+}
+footer.footer_bar .flex-box ul li a{
+    font-size: 20px;
+    color: #F6F8FC;
+    font-weight: 300;
+    line-height: 200%;
+}
+footer.footer_bar .footer_bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+footer.footer_bar .footer_bottom p{
+    font-size: 20px;
+    color: #F6F8FC;
+    font-weight: 300;
+}
+
+footer.footer_bar .footer_bottom .footer_icon{
+    align-items: center;
+
+}
+footer.footer_bar .footer_bottom .footer_icon img{
+    width: 25px;
+    display: inline-block;
+    margin-left: 15px;
+    cursor: pointer;
+}
+footer.footer_bar .footer_bottom .footer_icon img:nth-child(1){width: 30px;}
+/* footer 끝 ======================================================= */
+
+/* media================================================== */
+@media(max-width:1030px){
+header ul.menu , div.login{display: none;}
+header .logo img {width: 41px;}
+
+
+
+
+    /* 햄버거 버튼 구역 ===================================      */
+    #bt{display: block;    position: fixed; right: 30px; top:24px; 
+                width: 30px; height: 30px;
+                z-index: 5000;
+                cursor: pointer; 
+                
+                }  /* 나중에 보더는 변경하도록 */
+
+    #bt span{position: absolute;  
+            width: inherit; /* 부모 값 대로 상속해라 100%해도됨. */
+            height: 4px; left:0px; top:20%;
+            background-color: #F6F8FC;
+            transform: translate(0, -50%); 
+            display: inline-block; 
+            transition: 0.3s;
+            border-radius: 5px;
+            }
+
+    #bt span:before, #bt span:after{ 
+        content: '';
+        position: absolute; width: inherit; /* 부모 값 대로 상속해라 100px해도됨. */
+        height: inherit; /* 10px */
+        background-color: #F6F8FC;   transition: 0.3s;
+        border-radius: 5px;
+        }
+    #bt span:before{ /* 이것의 부모는 #bt span 주의 */
+        top:-10px; 
+    }
+    #bt span:after{ /* 이것의 부모는 #bt span 주의 */
+        top:10px;   }
+
+    /* 클릭시 보여질 active클래스  */
+    #bt.active span{
+        background-color: transparent; }
+
+    #bt.active span:before{
+        top:0px; /* -20값을 그래로 가져가면 위치가 바뀌므로 0으로 수정 */
+        transform: rotate(45deg);
+    }
+    #bt.active span:after{
+        top:0px; /* 20값을 그래로 가져가면 위치가 바뀌므로 0으로 수정 */
+        transform: rotate(-45deg);
+    }
+
+/* 햄버거 버튼 구역 끝 ===================================      */
+
+header{border-bottom: none; background-color: rgba(0, 0, 0, 0);}
+
+
+.mo_menubar{background-color: #000; width: 1000px;}
+    .mo_menu{display: block; right: -100%; }
+    .mo_menu.show{right: 0; transition: all 0.3s;}
+    /* 모바일용 메뉴===  */
+
+
+     .mo_header.mo_headerbar{ background-color:rgba(20, 28, 52,1) ; }
+
+    .mo_header{
+       background-color:rgba(20, 28, 52,0) ;
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 60px;
+        transition: 0.3s;
+        
+        z-index: 100;
+    }
+
+    .mo_menu  {
+            position: fixed;
+            z-index: 2000;
+            width: 100%;
+            background-color: #141C34;
+            height: 100vh;
+            transition: all 0.3s;
+            padding-top: 50px;
+        }
+        .mo_menu>ul{padding-left: 40px; padding-right: 40px; padding-top: 40px;}
+        .mo_menu > ul > li{
+            border-top: 1px solid #F6F8FC; 
+            padding-left: 20px;
+            
+        }
+        .mo_menu > ul > li:nth-child(4){border-bottom: 1px solid #F6F8FC;}
+        .mo_menu  > ul > li > a{   
+            color: #F6F8FC;
+            font-size: 32px;
+            padding: 30px 0;
+            display: inline-block;
+        }
+
+        .mo_menu .mo_submenu{
+            display: none;
+            padding-left: 40px;
+            
+        }
+        
+
+        .mo_menu  .mo_submenu>li> a{
+            font-size: 28px;
+            padding: 20px 0;
+            color:#F6F8FC;
+            display: inline-block;
+            
+        }
+        header .logo{ position: fixed; left: 30px; top:10px;} 
+        div.mo_login{
+        color: #F6F8FC;
+        font-size: 28px;
+        padding: 30px 40px;
+        /* display: inline-block; */
+        width: 100%;
+        text-align: right;
+    }
+       
+    footer.footer_bar{padding-top: 0;}
+    footer.footer_bar .flex-box {border: 0;}
+    footer.footer_bar .flex-box li span{
+         margin-right: 10px;
+         float: right;
+         display: block;
+         transition: all 0.4s;
+}
+     footer.footer_bar .flex-box ul{width: 100%; padding-bottom: 0;}
+    footer.footer_bar .flex-box > ul  ul{
+        display: none;
+        margin-left: 20px;
+        
+    }
+    footer.footer_bar .flex-box > ul > li:nth-child(1){
+        font-size: 36px;
+        padding: 40px 0;
+        border-bottom: 1px solid #fff;
+    }
+    footer.footer_bar .flex-box ul li a{font-size: 24px;}
+    footer.footer_bar .footer_bottom p{font-size: 28px;}
+
+    footer.footer_bar .flex-box li span.rotate{transform: rotate(90deg); }
+    
+
+    footer.footer_bar .footer_bottom{display: block;}
+    footer.footer_bar .footer_bottom .footer_icon{margin-top: 20px;}
+    footer.footer_bar .footer_bottom .footer_icon img{width: 40px; margin-left: 25px;}
+    footer.footer_bar .footer_bottom .footer_icon img:nth-child(1) { width: 50px; margin-left: 0; }
+   
+}
+
+
+
+
+
+@media(max-width:992px){
+    .headerbar{display: none;}
+}
+
+
+@media(max-width:767px){
+        .mo_menu > ul > li > a{
+            font-size: 24px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .mo_menu .mo_submenu>li> a {
+            font-size: 20px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+        }
+        div.mo_login{
+            font-size: 24px;
+        }
+        
+
+        footer.footer_bar .flex-box > ul > li:nth-child(1) {font-size: 24px; padding: 30px 0;}
+        footer.footer_bar .flex-box ul li a{font-size: 20px;}
+        footer.footer_bar .footer_bottom p{font-size: 16px;}
+        footer.footer_bar .footer_bottom .footer_icon img{width: 25px;}
+        footer.footer_bar .footer_bottom .footer_icon img:nth-child(1) {width: 30px;}
+
+
+
+}
